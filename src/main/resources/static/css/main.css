@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  --bg_color: rgb(186, 228, 170);
+  --btn_grad_bottom: green;
+  --btn_grad_top: rgb(0, 255, 17);
+  --logo_color: #f2f27a;
+  --header_bg_color: #1d1d1d;
+  --footer_color: #fff;
+}
+
+img {
+  height: 400px;
+}
+
+body {
+    background: var(--bg_color);
+    color: #1d1d1d;    
+    position: relative;
+    min-height: 100vh;
+}
+
+.header {
+  background-color: var(--header_bg_color);
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.header h1 {
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  color: var(--logo_color);
+  font-size: 40pt;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.main {
+  padding: 20px 20px;
+  font-size: 15pt;
+  padding-bottom: 5rem;
+}
+
+.main table {
+  width: 60%;
+  background-color: rgb(146, 176, 133);
+  border-collapse: collapse;
+  border-width: 5px;
+  border-color: var(--header_bg_color);
+  border-style: solid;
+  border-radius: 20px;
+  color: var(--footer_color);
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main thead{
+  font-size: 30px;
+}
+
+.main tbody {
+  font-size: 25px;
+  text-align: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.centered {
+  margin-left: 25%;
+}
+
+.row {
+  display: flex;
+  margin-top: 30px;
+  
+}
+
+.column {
+  margin-right: 10%;
+  padding: 10px;
+  outline-style: solid;
+}
+
+.column h2 {
+  text-decoration: underline;
+}
+
+.submit_button {
+  padding-top: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.submit_button input {
+  background: var(--btn_grad_bottom);
+  background-image: -webkit-linear-gradient(top, var(--btn_grad_bottom), var(--btn_grad_top));
+  background-image: -moz-linear-gradient(top, var(--btn_grad_bottom), var(--btn_grad_top));
+  background-image: -ms-linear-gradient(top, var(--btn_grad_bottom), var(--btn_grad_top));
+  background-image: -o-linear-gradient(top, var(--btn_grad_bottom), var(--btn_grad_top));
+  background-image: linear-gradient(to bottom, var(--btn_grad_bottom), var(--btn_grad_top));
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.submit_button input:hover {
+  background: var(--btn_grad_bottom);
+  background-image: var(--btn_grad_bottom);
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background: var(--header_bg_color);
+  color: var(--footer_color);
+
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+}
+
+.footer p {
+  flex: 50%;
+  text-align: center;
+  
+}
+
+.footer span {
+  padding-right: 5px;
+}
+
+.social__icon--link {
+  color: var(--footer_color);
+  font-size: 18px;
+}
+
+.social__icon--link i {
+  color: var(--footer_color);
+  font-size: 18px;
+}

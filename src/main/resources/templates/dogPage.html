@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to Dog Spring!</title>
+        <link th:href="@{/css/main.css}" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/83bd2eb88c.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="/"><h1>DogSpring</h1></a>
+        </div>
+
+        <div class="main">
+            <a th:href="'/users/' + ${dog.ownerUsername}">Return to owner</a>
+
+            <h1>Name: <span th:text="${dog.name}"></span></h1>
+            <img th:src="${dog.imgLink}">
+            <p>Happiness: <span th:text="${dog.happiness}"></span></p>
+            <p>Energy: <span th:text="${dog.energy}"></span></p>
+            <p>Hunger: <span th:text="${dog.hunger}"></span></p>
+        </div>
+
+
+        <div class="footer">
+            <p>©2022 Jack Drolet | 
+                <a href="https://www.linkedin.com/in/jack-drolet/" class="social__icon--link" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <span></span>
+                <a href="https://github.com/J-Drolet" class="social__icon--link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <span></span>
+                <a href="tel:518-593-1108" class="social__icon--link" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                <span></span>
+                <a href="mailto:jjtelord@gmail.com" class="social__icon--link" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <span></span>
+                <a href="https://j-drolet.github.io/" class="social__icon--link" target="_blank"><i class="fa-solid fa-id-card"></i></a>
+            </p>
+        </div>
+    </body>
+</html>

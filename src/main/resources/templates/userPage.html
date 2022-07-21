@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to Dog Spring!</title>
+        <link th:href="@{/css/main.css}" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/83bd2eb88c.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="/"><h1>DogSpring</h1></a>
+        </div>
+
+        <div class="main">
+            <h1>Welcome, <span th:text="${user.displayName}"></span></h1>
+            <p th:text="'username: ' + ${user.username}" />
+            <a href="/">Go back home</a>
+            <div class="row">
+                <div class="column"><h2>Generate new dog</h2>
+                    <form action="#" th:action="'/users/' + ${user.username} + '/dogs/'" th:object="${dogForm}" method="post">
+                        <p>Dog Name: <input type="text" th:field="*{dogName}" /></p>
+                        <p><div class="submit_button"><input type="submit" value="Generate" /></div></p>
+                    </form>
+                </div>
+            </div>
+
+            <h2>Owned Dogs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Dog Name </th>
+                        <th> Image </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(dogs)}">
+                        <td colspan="2"> No Dogs Available </td>
+                    </tr> 
+                    
+                    <tr th:each="dog : ${dogs}">
+                        <td><span th:text="${dog.name}"> Name </span></td>
+                        <td><a th:href="'/dogs/' + ${dog.id}"><img th:src="${dog.imgLink}" alt="Dog image"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>©2022 Jack Drolet | 
+                <a href="https://www.linkedin.com/in/jack-drolet/" class="social__icon--link" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <span></span>
+                <a href="https://github.com/J-Drolet" class="social__icon--link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <span></span>
+                <a href="tel:518-593-1108" class="social__icon--link" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                <span></span>
+                <a href="mailto:jjtelord@gmail.com" class="social__icon--link" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <span></span>
+                <a href="https://j-drolet.github.io/" class="social__icon--link" target="_blank"><i class="fa-solid fa-id-card"></i></a>
+            </p>
+        </div>
+    </body>
+</html>

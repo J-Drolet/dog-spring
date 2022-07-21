@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'io.github.jdrolet.dogspring'
+group = 'io.github.jdrolet'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
@@ -13,8 +13,13 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.springframework/spring-web
+	implementation group: 'org.springframework', name: 'spring-web', version: '5.3.21'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.3'
 }
 
 tasks.named('test') {
