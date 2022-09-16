@@ -8,7 +8,6 @@ public class DogspringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DogspringApplication.class, args);
-
 	}
 
 }

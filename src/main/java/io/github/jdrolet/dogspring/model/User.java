@@ -8,27 +8,41 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
-    private final String userName;
+    private String userName;
     private String displayName;
-    private List<UUID> ownedDogIds;
+    private ArrayList<UUID> ownedDogIds;
     private int gold;
     private LocalDateTime lastDogRequest;
+
+    public User() {
+
+    }
     
     public User(@JsonProperty("username") String username, @JsonProperty("displayName") String displayname) {
         this.userName = username;
         this.displayName = displayname;
         this.ownedDogIds = new ArrayList<UUID>();
         this.gold = 0;
-        this.lastDogRequest = LocalDateTime.MIN;
+        this.lastDogRequest = LocalDateTime.of(1900, 1, 1, 0, 0);
     }
+
+    public void setUsername(String username) { this.userName = username; }
 
     public String getUsername() { return userName; }
 
+    public void setDisplayName(String displayName) { this.displayName = displayName; }
+
     public String getDisplayName() { return displayName; }
 
-    public List<UUID> getOwnedDogs() { return ownedDogIds; }
+    public void setOwnedDogIds(ArrayList<UUID> ownedDogIds) { this.ownedDogIds = ownedDogIds; }
+
+    public List<UUID> getOwnedDogIds() { return ownedDogIds; }
+
+    public void setGold(int gold) { this.gold = gold;}
 
     public int getGold() { return gold; }
+
+    public void setLastDogRequest(LocalDateTime lastDogRequest) { this.lastDogRequest = lastDogRequest; }
 
     public LocalDateTime getLastDogRequest() { return lastDogRequest; }
 
@@ -38,6 +52,7 @@ public class User {
      * @param id - UUID of the added dog
      */
     public void addDogId(UUID id) {
+        System.out.println(id);
         ownedDogIds.add(id);
     }
 

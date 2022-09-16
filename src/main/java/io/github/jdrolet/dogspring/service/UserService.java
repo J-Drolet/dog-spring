@@ -54,7 +54,7 @@ public class UserService {
         if(!user.isPresent())
             return null;
 
-        for (UUID dogId : user.get().getOwnedDogs()) {
+        for (UUID dogId : user.get().getOwnedDogIds()) {
             Optional<Dog> foundDog = dogService.getDogById(dogId);
             if(foundDog.isPresent())
                 dogs.add(foundDog.get());
